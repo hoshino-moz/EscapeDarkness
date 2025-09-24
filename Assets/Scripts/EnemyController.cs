@@ -15,7 +15,7 @@ public class EnemyController : MonoBehaviour
     Animator animator;          //Animator
 
     bool isActive = false;      //アクティブフラグ
-    public int arrangeId = 0;   //配置の識別に使う
+    //public int arrangeId = 0;   //配置の識別に使う
 
 
     public bool onBarrier; //バリアにあたっているか

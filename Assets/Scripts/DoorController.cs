@@ -69,7 +69,7 @@ public class DoorController : MonoBehaviour
                 {
                     GameManager.key1--; //Œ®‚ÌÁ–Õ
                     nextTalk = true; //Ÿ‚Ìƒg[ƒN“WŠJ‚ğ‚³‚¹‚é
-                    GameManager.doorOpenState[0] = true; //‹L˜^—p‚Ì{ùó‹µ‚ğtrue
+                    GameManager.doorsOpenedState[0] = true; //‹L˜^—p‚Ì{ùó‹µ‚ğtrue
                 }
                 break;
 
@@ -78,7 +78,7 @@ public class DoorController : MonoBehaviour
                 {
                     GameManager.key2--;
                     nextTalk = true;
-                    GameManager.doorOpenState[1] = true;
+                    GameManager.doorsOpenedState[1] = true;
                 }
                 break;
 
@@ -87,7 +87,7 @@ public class DoorController : MonoBehaviour
                 {
                     GameManager.key3--;
                     nextTalk = true;
-                    GameManager.doorOpenState[2] = true;
+                    GameManager.doorsOpenedState[2] = true;
                 }
                 break;
 

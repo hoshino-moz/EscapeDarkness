@@ -210,4 +210,10 @@ public class PlayerController : MonoBehaviour
         Destroy(gameObject, 1.0f); //1秒後に存在を消去
     }
 
+    //スポットライト　ライト点灯
+    public void SpotLightCheck()
+    {
+        if (GameManager.hasSpotLight) spotLight.SetActive(true);
+    }
+
 }
