@@ -6,11 +6,11 @@ public class Shooter : MonoBehaviour
 {
     PlayerController playerCnt;
 
-    public GameObject billPrefab;
-    public float shootSpeed;
-    public float shootDelay;
-    bool inAttack;
-    
+    public GameObject billPrefab; //Instatiate生成する対象オブジェクト
+    public float shootSpeed; //お札の速度
+    public float shootDelay; //発射間隔
+    bool inAttack; //攻撃中ならtrue
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,13 +21,15 @@ public class Shooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //スペースキー
+        //スペースキーをおしたらお札を投擲
         if (Input.GetButtonDown("Jump")) Shoot();
     }
 
     public void Shoot()
     {
         if (inAttack || GameManager.bill <= 0) return;
+
+        SoundManager.instance.SEPlay(SEType.Shoot);
 
         GameManager.bill--;
         inAttack = true;

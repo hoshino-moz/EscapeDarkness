@@ -2,18 +2,15 @@ using UnityEngine;
 
 public class BarrierController : MonoBehaviour
 {
-    public float deleteTime = 5.0f;
+    public float deleteTime = 5.0f; //è¡ñ≈Ç∑ÇÈÇ‹Ç≈ÇÃéûä‘
 
-    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Destroy(gameObject, deleteTime);
-    }
+        SoundManager.instance.SEPlay(SEType.Barrier); //SE ÉTÉEÉìÉh
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //deleteTimeïbå„Ç…è¡ñ≈
+        Destroy(gameObject, deleteTime);
     }
 }

@@ -51,6 +51,7 @@ public class DoorController : MonoBehaviour
     //TalkProcessコルーチンの設計
     IEnumerator TalkProcess()
     {
+        SoundManager.instance.SEPlay(SEType.Door); //SE サウンド
 
         //フラッシュ入力阻止のため、少し処理を止める
         yield return new WaitForSecondsRealtime(1.0f);
@@ -95,13 +96,15 @@ public class DoorController : MonoBehaviour
 
         if (nextTalk)
         {
+            SoundManager.instance.SEPlay(SEType.DoorOpen); //SE サウンド
+
             //開錠したという類のメッセージを表示
             nameText.text = message.msgArray[1].name;
             messageText.text = message.msgArray[1].message;
 
-            yield return new WaitForSecondsRealtime(0.1f) ; 
+            yield return new WaitForSecondsRealtime(0.1f);  //フラッシュ入力防止
 
-            while (!Input.GetKeyDown(KeyCode.E))
+            while (!Input.GetKeyDown(KeyCode.E)) //Eキーが押されるまでまつ
             {
                 yield return null;
             }

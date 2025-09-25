@@ -30,11 +30,11 @@ public class KeyData : MonoBehaviour
                     GameManager.keysPickedState[0] = true;
                     break;
                 case KeyType.key2:
-                    GameManager.key1++;
+                    GameManager.key2++;
                     GameManager.keysPickedState[1] = true;
                     break;
                 case KeyType.key3:
-                    GameManager.key1++;
+                    GameManager.key3++;
                     GameManager.keysPickedState[2] = true;
                     break;
             }
