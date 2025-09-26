@@ -51,8 +51,8 @@ public class BossController : MonoBehaviour
         float angle = rad * Mathf.Rad2Deg;
 
         // 移動するベクトルを作る
-        axisH = Mathf.Cos(rad) * speed;
-        axisV = Mathf.Sin(rad) * speed;
+        axisH = Mathf.Cos(rad);
+        axisV = Mathf.Sin(rad);
     }
 
     void FixedUpdate()
@@ -84,7 +84,7 @@ public class BossController : MonoBehaviour
         }
 
         // 移動
-        rbody.linearVelocity = new Vector2(axisH, axisV).normalized;
+        rbody.linearVelocity =( new Vector2(axisH, axisV).normalized) * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
